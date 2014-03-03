@@ -57,7 +57,7 @@ sourceSets {
 dependencies {
 		testCompile "junit:junit:$junitVersion"
         testCompile "org.springframework:spring-test:$springVersion"
-		compile "org.springframework:spring-simpleContext-support:$springVersion"
+		compile "org.springframework:spring-context-support:$springVersion"
 		compile "org.codehaus.groovy:groovy-all:2.1.0"
         runtime "log4j:log4j:$log4jVersion",
             "org.slf4j:jcl-over-slf4j:$slf4jVersion",

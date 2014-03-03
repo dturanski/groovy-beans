@@ -1,6 +1,7 @@
 .idea/
 build/
 settings
+/.gradle/
 .classpath
 .project
 .springBeans
