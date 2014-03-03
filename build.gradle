@@ -1,0 +1,66 @@
+group = 'org.springframework.samples.groovy'
+description = 'Spring Groovy Bean Builder Example'
+
+apply plugin: 'base'
+apply plugin: 'idea'
+apply plugin: 'eclipse'
+apply plugin: 'groovy'
+repositories {
+		maven { url 'http://repo.spring.io/libs-milestone'}
+        maven { url 'http://repo.spring.io/libs-release'}
+}
+
+ext {
+	springVersion = '4.0.2.RELEASE'
+	junitVersion = '4.11'
+    slf4jVersion = '1.7.5'
+    log4jVersion = '1.2.17'
+}
+
+compileJava {
+		sourceCompatibility=1.6
+		targetCompatibility=1.6
+}
+
+
+compileTestJava {
+		sourceCompatibility=1.6
+		targetCompatibility=1.6
+}
+
+
+
+sourceSets {
+    main {
+        java {
+            srcDirs=[]
+        }
+         groovy {
+            srcDirs = ['src/main/java']
+         }
+     }
+
+    test {
+            java  {
+                srcDirs=[]
+            }
+            groovy {
+                srcDirs = ['src/test/java']
+            }
+
+            resources {
+                srcDirs = ['src/test/resources']
+            }
+    }
+ }
+
+dependencies {
+		testCompile "junit:junit:$junitVersion"
+        testCompile "org.springframework:spring-test:$springVersion"
+		compile "org.springframework:spring-simpleContext-support:$springVersion"
+		compile "org.codehaus.groovy:groovy-all:2.1.0"
+        runtime "log4j:log4j:$log4jVersion",
+            "org.slf4j:jcl-over-slf4j:$slf4jVersion",
+            "org.slf4j:slf4j-log4j12:$slf4jVersion"
+}
+
