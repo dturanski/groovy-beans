@@ -4,7 +4,9 @@ This project contains some simple examples of creating a Spring Application Cont
 
 Running the examples
 ---
-All the examples are run from a JUnit test, GroovyBeanBuilderTests. This may be run in gradle:
+All the examples are run from a JUnit test, [GroovyBeanBuilderTests](https://github.com/dturanski/groovy-beans/blob/master/src/test/java/org/springframework/samples/groovy/GroovyBeanBuilderTests.java). Each test initializes and verifies one of the Application Contexts found in the [config](https://github.com/dturanski/groovy-beans/blob/master/config) directory.
+
+This may be run in gradle:
 
      $gradle test
   
@@ -20,4 +22,6 @@ Note: When running from Intellij, I have found it necessary to exclude groovy fr
       File->Preferences->Compiler
       
 then add `;!?*.groovy` to Resource patterns
+
+
 
