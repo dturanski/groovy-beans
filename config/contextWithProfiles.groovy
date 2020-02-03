@@ -1,4 +1,4 @@
-package org.springframework.samples.groovy
+package org.springframework.samples.beans
 
 beans {
     // org.springframework.beans.factory.groovy.GroovyBeanDefinitionReader

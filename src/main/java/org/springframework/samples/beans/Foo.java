@@ -16,17 +16,10 @@
  *
  */
 
-package my.beans;
+package org.springframework.samples.beans;
 
 import org.springframework.stereotype.Component;
 
-/**
- * Created with IntelliJ IDEA.
- * User: dturanski
- * Date: 2/25/14
- * Time: 10:04 AM
- * To change this template use File | Settings | File Templates.
- */
 @Component
 public class Foo {
 }
