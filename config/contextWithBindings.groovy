@@ -1,4 +1,4 @@
-package org.springframework.samples.groovy
+package org.springframework.samples.beans
 
 beans {
     if (profiles.contains("prof1")) {

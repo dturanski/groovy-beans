@@ -27,8 +27,8 @@ http://www.springframework.org/schema/util http://www.springframework.org/schema
 
     <!-- This example provided to show that it doesn't work -->
     <util:properties id="props">
-        <prop key="basePackage">my.beans</prop>
+        <prop key="basePackage">org.springframework.samples.beans</prop>
     </util:properties>
     <context:property-placeholder properties-ref="props"/>
-    <context:component-scan base-package="${basePackage}"/>
+    <context:component-scan annotation-config="true" base-package="${basePackage}"/>
 </beans>

@@ -16,17 +16,13 @@
  *
  */
 
-package org.springframework.samples.groovy;
+package org.springframework.samples.beans;
 
 import groovy.lang.Binding;
-import my.beans.Foo;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
-import org.springframework.context.support.GenericApplicationContext;
 import org.springframework.context.support.GenericGroovyApplicationContext;
-import org.springframework.core.env.ConfigurableEnvironment;
 
 import static org.junit.Assert.assertEquals;
 
@@ -36,19 +32,19 @@ public class GroovyBeanBuilderTests {
         ApplicationContext context = new GenericGroovyApplicationContext("file:config/simpleContext.groovy");
         String foo =  context.getBean("foo",String.class);
 
-        assertEquals("hello",foo);
-        Bar bar = context.getBean("bar",Bar.class);
-        assertEquals(123,bar.getI());
+        assertEquals("hello", foo);
+        Bar bar = context.getBean("bar", Bar.class);
+        assertEquals(123, bar.getI());
     }
 
     @Test
     public void testVariableIdAndClass() {
         ApplicationContext context = new GenericGroovyApplicationContext("file:config/contextWithVariableIdAndClass.groovy");
-        String foo =  context.getBean("foo",String.class);
+        String foo =  context.getBean("foo", String.class);
 
         assertEquals("hello",foo);
-        Bar bar = context.getBean("bar",Bar.class);
-        assertEquals(123,bar.getI());
+        Bar bar = context.getBean("bar", Bar.class);
+        assertEquals(123, bar.getI());
     }
 
 
@@ -59,28 +55,28 @@ public class GroovyBeanBuilderTests {
         context.getEnvironment().addActiveProfile("prof1");
         context.load("file:config/contextWithProfiles.groovy");
         context.refresh();
-        String foo =  context.getBean("foo",String.class);
-        assertEquals("hello",foo);
+        String foo =  context.getBean("foo", String.class);
+        assertEquals("hello", foo);
     }
     @Test
     public void testProfiles2() {
         GenericGroovyApplicationContext context = new GenericGroovyApplicationContext("file:config/contextWithProfiles.groovy");
-        String foo =  context.getBean("foo",String.class);
-        assertEquals("world",foo);
+        String foo =  context.getBean("foo", String.class);
+        assertEquals("world", foo);
     }
 
     @Test
     public void testConfig() {
         ApplicationContext context = new GenericGroovyApplicationContext("file:config/contextWithConfig.groovy");
-        String foo =  context.getBean("foo",String.class);
-        assertEquals("hello",foo);
+        String foo =  context.getBean("foo", String.class);
+        assertEquals("hello", foo);
     }
 
     @Test
     public void testProperties() {
         ApplicationContext context = new GenericGroovyApplicationContext("file:config/contextWithProperties.groovy");
-        String foo =  context.getBean("foo",String.class);
-        assertEquals("hello",foo);
+        String foo =  context.getBean("foo", String.class);
+        assertEquals("hello", foo);
     }
 
     @Test

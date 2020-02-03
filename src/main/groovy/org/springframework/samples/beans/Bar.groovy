@@ -17,7 +17,7 @@
  *
  */
 
-package org.springframework.samples.groovy
+package org.springframework.samples.beans
 
 class Bar {
     String s

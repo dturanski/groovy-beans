@@ -1,4 +1,4 @@
-package org.springframework.samples.groovy
+package org.springframework.samples.beans
 
 import org.springframework.core.io.ClassPathResource
 

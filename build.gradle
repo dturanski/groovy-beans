@@ -1,66 +1,45 @@
+plugins {
+    id 'idea'
+    id 'eclipse'
+    id 'groovy'
+}
+
 group = 'org.springframework.samples.groovy'
 description = 'Spring Groovy Bean Builder Example'
 
-apply plugin: 'base'
-apply plugin: 'idea'
-apply plugin: 'eclipse'
-apply plugin: 'groovy'
 repositories {
-		maven { url 'http://repo.spring.io/libs-milestone'}
-        maven { url 'http://repo.spring.io/libs-release'}
+	mavenCentral()
 }
 
 ext {
-	springVersion = '4.0.2.RELEASE'
+	springVersion = '4.3.26.RELEASE'
 	junitVersion = '4.11'
+    logbackVersion = '1.2.3'
     slf4jVersion = '1.7.5'
     log4jVersion = '1.2.17'
 }
 
 compileJava {
-		sourceCompatibility=1.6
-		targetCompatibility=1.6
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
 }
-
 
 compileTestJava {
-		sourceCompatibility=1.6
-		targetCompatibility=1.6
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
 }
 
-
-
-sourceSets {
-    main {
-        java {
-            srcDirs=[]
-        }
-         groovy {
-            srcDirs = ['src/main/java']
-         }
-     }
-
-    test {
-            java  {
-                srcDirs=[]
-            }
-            groovy {
-                srcDirs = ['src/test/java']
-            }
-
-            resources {
-                srcDirs = ['src/test/resources']
-            }
-    }
- }
-
 dependencies {
-		testCompile "junit:junit:$junitVersion"
-        testCompile "org.springframework:spring-test:$springVersion"
-		compile "org.springframework:spring-context-support:$springVersion"
-		compile "org.codehaus.groovy:groovy-all:2.1.0"
-        runtime "log4j:log4j:$log4jVersion",
+    testCompile "junit:junit:$junitVersion"
+    testCompile "org.springframework:spring-test:$springVersion"
+    compile "org.springframework:spring-context-support:$springVersion"
+    compile "org.codehaus.groovy:groovy-all:2.5.9"
+    runtime "log4j:log4j:$log4jVersion",
             "org.slf4j:jcl-over-slf4j:$slf4jVersion",
             "org.slf4j:slf4j-log4j12:$slf4jVersion"
 }
 
+wrapper {
+    distributionType = Wrapper.DistributionType.ALL
+    gradleVersion = '5.6.2'
+}
